@@ -1,5 +1,6 @@
 import React from 'react'
 import {View,Text,TextInput,StyleSheet,TouchableOpacity} from 'react-native'
+import { color } from 'react-native-reanimated'
 
 
 const SignIn = () => {
@@ -12,7 +13,7 @@ const SignIn = () => {
                     <Text style={style.text_in_green_button}>LOG IN</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={style.bottom}>
-                    <Text style={{textAlign:'center',color:'#FFFFFF'}}>FORGET PASSWORD</Text>
+                    <Text style={{textAlign:'center',color:'#FFFFFF'}}>FORGET PASSWORD?</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -28,13 +29,14 @@ const style=StyleSheet.create({
         borderBottomColor:"#FFFFFF",
         borderBottomWidth:2,
         marginTop:20,
-        marginBottom:10
+        marginBottom:10,
+        color:"#fff"
     },
     green_button:{
         backgroundColor:'#09B44D',
         borderRadius:20,
         justifyContent:'center',
-        width:340,
+        width:305,
         height:45
     },
     text_in_green_button:{

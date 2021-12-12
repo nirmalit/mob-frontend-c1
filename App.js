@@ -15,6 +15,7 @@ import HeaderBar from './page-common/component/HeaderBar';
 import Course from './page-course/Course';
 import Gallery from './page-gallery/Gallery';
 import AboutUs from './page-about/AboutUs';
+import Otp from './page-otp/otp';
 
 
 const Stack = createNativeStackNavigator();
@@ -24,7 +25,7 @@ const App=()=>{
   
   const preLoader=async ()=>{
     let isSign=await isSignedIn()
-    console.warn("check",isSign)
+    // console.warn("check",isSign)
       if(isSign==false){
         storeEmptyData()
         setReloadFlag(false)
@@ -33,7 +34,7 @@ const App=()=>{
   }
   const signOutHandler=()=>{
     removeStoreData()
-    console.warn("sign Out")
+    // console.warn("sign Out")
     setLoginScreenFlag(false)
     setReloadFlag(false)
   }
@@ -59,8 +60,12 @@ const App=()=>{
     return(
       <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" 
+        {/* <Stack.Screen name="Home" 
           component={Home} 
+          options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+        /> */}
+         <Stack.Screen name="OTP" 
+          component={Otp} 
           options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
         />
         <Stack.Screen name="Product" 

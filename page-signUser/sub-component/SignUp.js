@@ -207,7 +207,7 @@ const style=StyleSheet.create({
         backgroundColor:'#09B44D',
         borderRadius:20,
         justifyContent:'center',
-        width:340,
+        width:305,
         height:45
     },
     text_in_green_button:{

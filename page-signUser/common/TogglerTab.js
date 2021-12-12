@@ -24,7 +24,7 @@ const TogglerTab = (props) => {
 
 const style=StyleSheet.create({
     mini_white_box:{
-        width:340,
+        width:305,
         height:51,
         padding:2,
         backgroundColor:'#FFFFFF',
