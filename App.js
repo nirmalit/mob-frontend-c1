@@ -60,10 +60,10 @@ const App=()=>{
     return(
       <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="Home" 
+        <Stack.Screen name="Home" 
           component={Home} 
           options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
-        /> */}
+        />
          <Stack.Screen name="OTP" 
           component={Otp} 
           options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}

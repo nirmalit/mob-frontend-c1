@@ -6,7 +6,7 @@ const Home = (props) => {
     console.warn("home",props)
     return (
         <View>
-            <NavBar />
+            <NavBar Title="HOME" />
             <View style={styles.container}>
             <Text>HOME PAGE</Text>
             </View>
