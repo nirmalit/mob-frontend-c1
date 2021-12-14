@@ -1,0 +1,183 @@
+const product = [{
+    imgUrl:require('../image/common/cocopit.png'),
+    productName:"Cocopit",
+    price:"121.12"
+},{
+     imgUrl:require('../image/common/incubator.png'),
+    productName:"Egg incubator",
+    price:"3000"
+},{
+     imgUrl:require('../image/common/plant.png'),
+    productName:"Plant",
+    price:"12"
+},{
+     imgUrl:require('../image/common/cocopit.png'),
+    productName:"Egg",
+    price:"2"
+},{
+     imgUrl:require('../image/common/cocopit.png'),
+    productName:"Seed ball",
+    price:"12"
+},{
+     imgUrl:require('../image/common/cocopit.png'),
+    productName:"product",
+    price:"121.12"
+},{
+     imgUrl:require('../image/common/cocopit.png'),
+    productName:"product",
+    price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+},{
+    imgUrl:require('../image/common/cocopit.png'),
+   productName:"product",
+   price:"121.12"
+}]
+
+export default product
