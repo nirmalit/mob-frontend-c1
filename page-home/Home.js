@@ -4,10 +4,11 @@ import NavBar from '../page-common/component/NavBar'
 import ProductComponent from '../page-product/Product-c'
 import product from '../constant/product-list'
 const Home = (props) => {
-    console.warn("home",props)
+     //console.warn("home",props)
     return (
         <View>
-            
+
+            <NavBar Title="HOME" props={{...props}} />
             <View style={styles.container}>
             <Text>Product</Text>
             <ScrollView horizontal={true}>
@@ -22,7 +23,6 @@ const Home = (props) => {
                 </View>
             </ScrollView>
             
-            </View>
         </View>
     )
 }
