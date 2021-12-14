@@ -15,7 +15,7 @@ import HeaderBar from './page-common/component/HeaderBar';
 import Course from './page-course/Course';
 import Gallery from './page-gallery/Gallery';
 import AboutUs from './page-about/AboutUs';
-import Otp from './page-otp/Otp';
+import Otp from './page-otp/otp';
 import Profile from './page-profile/Profile';
 
 
