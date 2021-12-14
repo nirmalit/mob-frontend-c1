@@ -90,6 +90,8 @@ const App=()=>{
           component={AboutUs} 
           options={{  headerBackVisible:false,headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
         />
+      
+       
       </Stack.Navigator>
     </NavigationContainer>
     )
