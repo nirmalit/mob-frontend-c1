@@ -51,6 +51,7 @@ const App=()=>{
     //console.warn(JSON.stringify(reloadFlag))
   }
   
+  
  if(loginScreenFlag===false){
     return(<IntroPage onChangeLoginFlag={changeLoginFlag} />)
   }
