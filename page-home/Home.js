@@ -9,8 +9,7 @@ const Home = (props) => {
         <View>
 
             <NavBar Title="HOME" props={{...props}} />
-            <View style={styles.container}>
-            <Text>Product</Text>
+ 
             <ScrollView horizontal={true}>
             <View style={{display:'flex',flexDirection:'row', justifyContent:'space-between',  paddingVertical:3}}>
                 {product.map((item)=>{

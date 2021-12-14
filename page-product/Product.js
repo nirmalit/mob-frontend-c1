@@ -13,7 +13,7 @@ const Product = () => {
             {/* <NavBar /> */}
             <View style={style.filterWrapper}>
                 <View style={{position:'relative'}}>
-                    <TextInput style={style.input_field} placeholder="Seatch" placeholderTextColor="#BEBEBE" textContentType="emailAddress" />
+                    <TextInput style={style.input_field} placeholder="Search" placeholderTextColor="#BEBEBE" textContentType="emailAddress" />
                     <View style={style.searchWrapper}>
                         <Image source={require('../image/common/search.png')} style={style.searchLogo} />
                     </View>
