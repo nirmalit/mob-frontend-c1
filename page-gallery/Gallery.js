@@ -9,9 +9,9 @@ const Gallery = (props) => {
    
     return (
         <View>
-            <NavBar />
+            <NavBar  Title="GALLERY" props={{...props}}  />
             <View style={styles.container}>
-                <Text>Gallery PAGE</Text>
+                {/* <Text>Gallery PAGE</Text> */}
             </View>
         </View>
     )

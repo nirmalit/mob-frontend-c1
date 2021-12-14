@@ -9,9 +9,9 @@ const AboutUs = (props) => {
    
     return (
         <View>
-            <NavBar />
+            <NavBar  Title="ABOUT US" props={{...props}}  />
             <View style={styles.container}>
-                <Text>about us PAGE</Text>
+                {/* <Text>about us PAGE</Text> */}
             </View>
         </View>
     )

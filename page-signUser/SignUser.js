@@ -20,7 +20,9 @@ const SignUser = (props) => {
                 <Image source={logo} />
             </View>
             <View style={style.black_box}>
-                <TogglerTab actives={activeTab} onChangeToggle={onChangeToggler} />
+                <View style={style.mini_white_box_container}> 
+                    <TogglerTab actives={activeTab} onChangeToggle={onChangeToggler} />
+                </View>
                 {activeTab==='sign in' && <SignIn onSignedSuccess={myChangeHandler} />}
                 {activeTab==='sign up' && <SignUp onSignedSuccess={myChangeHandler} />}
             </View>
@@ -42,6 +44,9 @@ const style=StyleSheet.create({
         alignItems:'center',
         
     },
+    mini_white_box_container:{
+        alignItems:'center'
+    }
 
 })
 export default SignUser;
