@@ -1,4 +1,5 @@
 import React from 'react'
+import reactDom from 'react-dom'
 import {Text ,View,TouchableOpacity,StyleSheet}  from 'react-native'
 import NavBar from '../page-common/component/NavBar'
 
@@ -8,8 +9,8 @@ const Course = (props) => {
     return (
         <View>
             <NavBar />
-            <View style={styles.container}>
-                <Text>Course PAGE</Text>
+            <View style={styles.header}>
+                <Text>Courses</Text>
             </View>
         </View>
     )
@@ -19,6 +20,11 @@ const styles=StyleSheet.create({
         padding:2,
         alignItems:'center',
         justifyContent:'center'
-    }
+    },
+    header:{
+        paddingVertical:20,
+        fontWeight:"bold"
+    },
+    
 })
 export default Course;

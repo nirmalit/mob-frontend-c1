@@ -64,26 +64,29 @@ const App=()=>{
           component={Home} 
           options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
         /> */}
-         <Stack.Screen name="OTP" 
-          component={Otp} 
-          options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
-        />
-        <Stack.Screen name="Product" 
-          component={Product} 
-          options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
-        />
-        <Stack.Screen name="Course" 
-          component={Course} 
-          options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
-        />
-        <Stack.Screen name="Gallery" 
-          component={Gallery} 
-          options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
-        />
         <Stack.Screen name="AboutUs" 
           component={AboutUs} 
           options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
         />
+        <Stack.Screen name="OTP" 
+          component={Otp} 
+          options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={SignUser} /> }}
+        />
+        <Stack.Screen name="Product" 
+          component={Product} 
+          options={{ headerTitle: (props) => <HeaderBar {...props} onback={signOutHandler} /> }}
+        />
+        
+        <Stack.Screen name="Gallery" 
+          component={Gallery} 
+          options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+        />
+         
+        <Stack.Screen name="Course" 
+          component={Course} 
+          options={{ headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+        />
+       
       </Stack.Navigator>
     </NavigationContainer>
     )
