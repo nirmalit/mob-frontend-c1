@@ -8,9 +8,9 @@ const Course = (props) => {
     
     return (
         <View>
-            <NavBar />
-            <View style={styles.header}>
-                <Text>Courses</Text>
+            <NavBar  Title="COURSE" props={{...props}}  />
+            <View style={styles.container}>
+                {/* <Text>Course PAGE</Text> */}
             </View>
         </View>
     )

@@ -50,7 +50,9 @@ const style=StyleSheet.create({
         height:45
     },
     bottom:{
-        marginTop:75
+        marginTop:75,
+        justifyContent:'center',
+        alignItems:'center'
     }
 })
 export default SignIn;

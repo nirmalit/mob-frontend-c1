@@ -14,6 +14,9 @@ const AboutUs = (props) => {
    
     return (
         <ScrollView>
+            
+            <NavBar  Title="ABOUT US" props={{...props}}  />
+           
             <View style={styles.container}>
                 <Image style={styles.image} source={aboutus} />
                 <Text style={styles.content}>Are You</Text>
@@ -47,7 +50,7 @@ const AboutUs = (props) => {
                     <Text style={styles.verify} > Join with us </Text>
                 </TouchableOpacity>
                 </View>
-            </View>
+       
             <View style={styles.footer}>
                 <View>
                     <View style={styles.footer_admininfo}>
@@ -64,6 +67,7 @@ const AboutUs = (props) => {
                     <Text style={styles.footertext} > Join with us </Text>
                 </View>
             </View>
+        </View>
             
             
         </ScrollView>

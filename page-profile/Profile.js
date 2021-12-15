@@ -1,17 +1,13 @@
 import React from 'react'
 import {Text ,View,TouchableOpacity,StyleSheet}  from 'react-native'
 import NavBar from '../page-common/component/NavBar'
-
 //import { removeStoreData } from '../page-common/auth-helper/authSaver'
-
-
-const Gallery = (props) => {
-   
+const Profile = (props) => {
+     //console.warn("home",props)
     return (
         <View>
-            <NavBar  Title="GALLERY" props={{...props}}  />
-            <View style={styles.container}>
-                {/* <Text>Gallery PAGE</Text> */}
+            <NavBar Title="PROFILE" props={{...props}} />
+            <View style={styles.container} >
             </View>
         </View>
     )
@@ -23,4 +19,4 @@ const styles=StyleSheet.create({
         justifyContent:'center'
     }
 })
-export default Gallery;
+export default Profile;
