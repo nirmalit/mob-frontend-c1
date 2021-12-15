@@ -91,7 +91,6 @@ const style=StyleSheet.create({
     },
     productWrapper:{
         width:width,
-        // height:height,
         padding:20,
         display:'flex',
         flexDirection:'row',

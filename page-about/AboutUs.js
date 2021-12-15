@@ -13,10 +13,9 @@ import aboutus_asset from '../image/common/aboutus_assest.png'
 const AboutUs = (props) => {
    
     return (
-        <ScrollView>
-            
+        <View style={{height:height}}>
             <NavBar  Title="ABOUT US" props={{...props}}  />
-           
+            <ScrollView contentContainerStyle={{paddingBottom:85}}>
             <View style={styles.container}>
                 <Image style={styles.image} source={aboutus} />
                 <Text style={styles.content}>Are You</Text>
@@ -71,6 +70,9 @@ const AboutUs = (props) => {
             
             
         </ScrollView>
+        </View>
+
+      
     )
 }
 const styles=StyleSheet.create({

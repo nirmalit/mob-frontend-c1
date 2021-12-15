@@ -10,7 +10,7 @@ const Course = (props) => {
         <View>
             <NavBar  Title="COURSE" props={{...props}}  />
             <View style={styles.container}>
-                {/* <Text>Course PAGE</Text> */}
+                
             </View>
         </View>
     )
