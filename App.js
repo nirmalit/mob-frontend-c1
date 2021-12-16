@@ -17,6 +17,7 @@ import Gallery from './page-gallery/Gallery';
 import AboutUs from './page-about/AboutUs';
 import Otp from './page-otp/Otp';
 import Profile from './page-profile/Profile';
+import Loading from './page-loading/Loading';
 
 
 const Stack = createNativeStackNavigator();
@@ -62,6 +63,7 @@ const App=()=>{
     return(
       <NavigationContainer>
       <Stack.Navigator>
+      
         <Stack.Screen name="Home" 
           component={Home} 
           options={{ headerBackVisible:false ,
@@ -78,6 +80,13 @@ const App=()=>{
           component={Otp} 
           options={{  headerBackVisible:false,
                       headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> 
+                    }}
+        />
+         <Stack.Screen name="Loading" 
+          component={Loading} 
+          options={{  headerBackVisible:false,
+                      headerTitle: (props) => null,
+                      headerShown:false 
                     }}
         />
         <Stack.Screen name="Product" 

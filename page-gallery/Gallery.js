@@ -6,7 +6,7 @@ import NavBar from '../page-common/component/NavBar'
 
 
 const Gallery = (props) => {
-   
+   console.warn('gall',JSON.stringify(props.navigation))
     return (
         <View>
             <NavBar  Title="GALLERY" props={{...props}}  />

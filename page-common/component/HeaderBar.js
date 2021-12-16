@@ -8,7 +8,7 @@ const {width,height}=Dimensions.get('screen')
 const HeaderBar = (props) => {
 
     const [showButton,setShowButton]=useState(false)
-    console.warn("hB",props)
+    //console.warn("hB",props)
     return (
         <View style={styles.container}> 
             <View style={styles.header_logo}><Image source={logo} style={styles.image_logo}/></View>
