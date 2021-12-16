@@ -5,6 +5,7 @@ import course_icon from '../../image/common/course.png'
 import gallery_icon from '../../image/common/gallery.png'
 import about_us_icon from '../../image/common/about_us.png'
 import profile_icon from '../../image/common/profile.png'
+import product_icon from '../../image/common/product.png'
 const {width,height}=Dimensions.get('screen')
 
 const NavBar = (props) => {
@@ -24,6 +25,10 @@ const NavBar = (props) => {
         if(props.Title==='ABOUT US'){
             return <Image source={about_us_icon} style={styles.icon}/>
         }
+        if(props.Title==='PRODUCT'){
+            return  <Image source={product_icon} style={styles.icon} />
+
+        }
     }
     //console.warn(props)
     return (
@@ -35,9 +40,14 @@ const NavBar = (props) => {
                             <Image source={home_icon} style={styles.icon} />
                             <Text style={styles.icon_text}>HOME</Text> 
                         </TouchableOpacity>)}
+                        
                         {props.Title!='PROFILE' && (<TouchableOpacity style={styles.icon_container} onPress={()=>props.props.navigation.navigate('Profile')}>
                             <Image source={profile_icon} style={styles.icon} />
                             <Text style={styles.icon_text}>PROFILE</Text> 
+                        </TouchableOpacity>)}
+                        {props.Title!='PRODUCT' && (<TouchableOpacity style={styles.icon_container} onPress={()=>props.props.navigation.navigate('Product')}>
+                            <Image source={product_icon} style={styles.icon} />
+                            <Text style={styles.icon_text}>PRODUCT</Text> 
                         </TouchableOpacity>)}
                         {props.Title!='COURSE' && (<TouchableOpacity  style={styles.icon_container}  onPress={()=>props.props.navigation.navigate('Course')}>
                             <Image source={course_icon} style={styles.icon}/>

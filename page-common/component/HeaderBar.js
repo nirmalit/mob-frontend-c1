@@ -8,6 +8,7 @@ const {width,height}=Dimensions.get('screen')
 const HeaderBar = (props) => {
 
     const [showButton,setShowButton]=useState(false)
+    console.warn("hB",props)
     return (
         <View style={styles.container}> 
             <View style={styles.header_logo}><Image source={logo} style={styles.image_logo}/></View>
@@ -16,7 +17,7 @@ const HeaderBar = (props) => {
                     <TouchableOpacity onPress={props.onSignOut} style={styles.sign_out_btn}><Text>SIGN OUT</Text></TouchableOpacity>
                     <View style={{marginLeft:20}}><TouchableOpacity onPress={()=>setShowButton(false)} ><Image source={close} /></TouchableOpacity></View>
                 </View>)}
-            {showButton==false && <View style={styles.sign_out_hover}><TouchableOpacity onPress={()=>setShowButton(true)}><Image source={logOut} /></TouchableOpacity></View>}
+            {showButton==false && props.children==="Profile" && <View style={styles.sign_out_hover}><TouchableOpacity onPress={()=>setShowButton(true)}><Image source={logOut} /></TouchableOpacity></View>}
         </View>
     )
 }
@@ -29,7 +30,7 @@ const styles=StyleSheet.create({
         justifyContent:'space-around'
     },
     header_logo:{
-        marginLeft:width/5
+        //marginLeft:width/5
     },
     image_logo:{
         width:79,

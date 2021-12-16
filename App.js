@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {Text} from 'react-native'
+import {Text,View} from 'react-native'
 import { isSignedIn, removeStoreData, storeEmptyData } from './page-common/auth-helper/authSaver';
 //import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -15,7 +15,7 @@ import HeaderBar from './page-common/component/HeaderBar';
 import Course from './page-course/Course';
 import Gallery from './page-gallery/Gallery';
 import AboutUs from './page-about/AboutUs';
-import Otp from './page-otp/otp';
+import Otp from './page-otp/Otp';
 import Profile from './page-profile/Profile';
 
 
@@ -64,34 +64,45 @@ const App=()=>{
       <Stack.Navigator>
         <Stack.Screen name="Home" 
           component={Home} 
-          options={{ headerBackVisible:false,headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} />}}
+          options={{ headerBackVisible:false ,
+                     headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} />
+                  }}
         />
         <Stack.Screen name="Profile" 
           component={Profile} 
-          options={{  headerBackVisible:false,headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} displaySignOut={true} />}}
+          options={{  headerBackVisible:false,
+                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} displaySignOut={true} />
+                    }}
         />
          <Stack.Screen name="OTP" 
           component={Otp} 
-          options={{  headerBackVisible:false,headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+          options={{  headerBackVisible:false,
+                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> 
+                    }}
         />
         <Stack.Screen name="Product" 
           component={Product} 
-          options={{  headerBackVisible:false,headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+          options={{  headerBackVisible:false,
+                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> 
+                    }}
         />
         <Stack.Screen name="Course" 
           component={Course} 
-          options={{  headerBackVisible:false, headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+          options={{  headerBackVisible:false, 
+                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> 
+                    }}
         />
         <Stack.Screen name="Gallery" 
           component={Gallery} 
-          options={{  headerBackVisible:false,headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+          options={{  headerBackVisible:false,
+                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> 
+                    }}
         />
         <Stack.Screen name="AboutUs" 
           component={AboutUs} 
-          options={{  headerBackVisible:false,headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
-        />
-      
-       
+          options={{  headerBackVisible:false,
+                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+        />     
       </Stack.Navigator>
     </NavigationContainer>
     )

@@ -3,14 +3,15 @@ import {Text,View,TextInput,StyleSheet,Image,ScrollView,Dimensions} from 'react-
 import NavBar from '../page-common/component/NavBar'
 import ProductComponent from './Product-c'
 import product from '../constant/product-list'
+import Title from './../page-intro/common/Title';
 const {width,height}=Dimensions.get('screen')
 
 
 
-const Product = () => {
+const Product = (props) => {
     return (
-        <View>
-            {/* <NavBar /> */}
+        <ScrollView>
+            <NavBar Title="PRODUCT" props={{...props}} />
             <View style={style.filterWrapper}>
                 <View style={{position:'relative'}}>
                     <TextInput style={style.input_field} placeholder="Search" placeholderTextColor="#BEBEBE" textContentType="emailAddress" />
@@ -24,13 +25,13 @@ const Product = () => {
             </View>
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:90}}>
                 <View style={style.productWrapper}>
-                    {product.map((item)=>{
-                        return (<ProductComponent product={item}/>)
+                    {product.map((item,i)=>{
+                        return (<ProductComponent product={item} key={i} />)
                     })}
                 </View>
             </ScrollView>
            
-        </View>
+        </ScrollView>
     )
 }
 
@@ -52,6 +53,7 @@ const style=StyleSheet.create({
         paddingHorizontal:20
     },
     filterWrapper:{
+        marginTop:40,
         display:"flex",
         flexDirection:"row",
         alignItems:'center',
