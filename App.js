@@ -24,6 +24,7 @@ const Stack = createNativeStackNavigator();
 const App=()=>{
   const [loginScreenFlag,setLoginScreenFlag]=useState(true)
   const [reloadFlag,setReloadFlag]=useState(true)
+  const [fromLocation,setFromLocation]=useState("")
   
   const preLoader=async ()=>{
     let isSign=await isSignedIn()
@@ -46,9 +47,16 @@ const App=()=>{
   const changeLoginFlag=()=>{
     setLoginScreenFlag(~(loginScreenFlag))
   }
-  const changeReloadFlag=()=>{
-    setLoginScreenFlag(true)
-    setReloadFlag(true)
+  const changeReloadFlag=(fromAction)=>{
+    if(fromAction==='sign In'){
+      setLoginScreenFlag(true)
+      setReloadFlag(true)
+      setFromLocation('sign In')
+    }else{
+      setLoginScreenFlag(true)
+      setReloadFlag(true)
+      setFromLocation('sign Up')
+    }
     //console.warn(JSON.stringify(reloadFlag))
   }
   
@@ -57,9 +65,10 @@ const App=()=>{
     return(<IntroPage onChangeLoginFlag={changeLoginFlag} />)
   }
   else if(reloadFlag===false){
-    return(<SignUser onchangeReloadFlag={changeReloadFlag} />)
+    return(
+    <SignUser onchangeReloadFlag={changeReloadFlag} />)
   }
-  else{
+ else{
     return(
       <NavigationContainer>
       <Stack.Navigator>
@@ -70,16 +79,16 @@ const App=()=>{
                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} />
                   }}
         />
+        <Stack.Screen name="OTP" 
+          component={Otp} 
+          options={{  headerBackVisible:false,
+                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> 
+                    }}
+        />
         <Stack.Screen name="Profile" 
           component={Profile} 
           options={{  headerBackVisible:false,
                       headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} displaySignOut={true} />
-                    }}
-        />
-         <Stack.Screen name="OTP" 
-          component={Otp} 
-          options={{  headerBackVisible:false,
-                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> 
                     }}
         />
          <Stack.Screen name="Loading" 

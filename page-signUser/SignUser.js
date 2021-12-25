@@ -7,24 +7,31 @@ import SignUp from './sub-component/SignUp';
 const {width,height}=Dimensions.get('screen')
 const SignUser = (props) => {
     const [activeTab,setActiveTab]=useState('sign in');
+    const [activeKeyboard,setActiveKeyboard]=useState(false)
     const onChangeToggler=(value)=>{
         setActiveTab(value)
     }
-    const myChangeHandler=()=>{
+    const myChangeHandler=(fromAction)=>{
         console.warn("S_user",props)
-        props.onchangeReloadFlag()
+        props.onchangeReloadFlag(fromAction)
     }
+    const onKeyboardActive=(state)=>{
+        setActiveKeyboard(state)
+    }
+    //console.warn("suser----",activeKeyboard)
     return (
         <View>
-            <View style={style.white_box}>
+            <View style={activeKeyboard?{...style.white_box,height:height/5}:style.white_box}>
                 <Image source={logo} />
             </View>
             <View style={style.black_box}>
                 <View style={style.mini_white_box_container}> 
                     <TogglerTab actives={activeTab} onChangeToggle={onChangeToggler} />
                 </View>
-                {activeTab==='sign in' && <SignIn onSignedSuccess={myChangeHandler} />}
-                {activeTab==='sign up' && <SignUp onSignedSuccess={myChangeHandler} />}
+                <View style={style.wrapper}>
+                {activeTab==='sign in' && <SignIn onSignedSuccess={myChangeHandler} onKeyboardFlag={onKeyboardActive} />}
+                {activeTab==='sign up' && <SignUp onSignedSuccess={myChangeHandler} onKeyboardFlag={onKeyboardActive} />}
+                </View>
             </View>
         </View>
     )
@@ -45,6 +52,9 @@ const style=StyleSheet.create({
         
     },
     mini_white_box_container:{
+        alignItems:'center'
+    },
+    wrapper:{
         alignItems:'center'
     }
 

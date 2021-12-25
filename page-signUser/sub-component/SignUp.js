@@ -1,9 +1,12 @@
-import React,{useState} from 'react'
-import {View,Text,TextInput,StyleSheet,TouchableOpacity, Image} from 'react-native'
+import React,{useState,useEffect} from 'react'
+import {View,Text,TextInput,StyleSheet,TouchableOpacity, Image,Keyboard,Dimensions} from 'react-native'
 import backIcon from '../../image/common/back_icon.png';
 //import { Col, Grid } from "react-native-easy-grid"
 import { storeData } from './../../page-common/auth-helper/authSaver';
+import validator from 'validator'
+import { apiSignUp } from '../common/apiHelper';
 
+const {width}=Dimensions.get("screen")
 const SignUp = props => {
     const [value,setValue]=useState({
         name:"",
@@ -14,6 +17,22 @@ const SignUp = props => {
         error:"",
         loading:false
     })
+
+    useEffect(() => {
+        const showSubscription = Keyboard.addListener("keyboardDidShow", () => {
+          props.onKeyboardFlag(true)
+        });
+        const hideSubscription = Keyboard.addListener("keyboardDidHide", () => {
+          props.onKeyboardFlag(false)
+        });
+    
+        return () => {
+          showSubscription.remove();
+          hideSubscription.remove();
+        };
+      }, []);
+
+      
     const changeHandler=(field_name,field_value)=>{
         setValue({
             ...value,
@@ -61,6 +80,13 @@ const SignUp = props => {
             })
             return false
         }
+        else if(!validator.isEmail(email)){
+            setValue({
+                ...value,
+                error:"Enter Valid Email ID"
+            })
+            return false
+        }
         else if(phoneNumber.toString().length==0){
             setValue({
                 ...value,
@@ -94,15 +120,34 @@ const SignUp = props => {
             }
         }  
     }
-    const allValidator=()=>{
+    const allValidator=async ()=>{
+        setValue({
+            ...value,
+            loading:true
+        })
         if(validateField()){
             //Hit the backend route here
-            storeData({token:"asdfg",id:"1234"})
-            //console.warn("s_Up",JSON.stringify(props))
-            props.onSignedSuccess()
+            const {email,name,phoneNumber,password}=value
+            let resultFromRequest=await apiSignUp({email,name,mobile:phoneNumber,password})
+            console.log("---",resultFromRequest)
+            if(resultFromRequest.success===false){
+                setValue({
+                    ...value,
+                    loading:false,
+                    error:resultFromRequest.msg
+                })
+            }else{
+                storeData({email:email})
+                setValue({
+                    ...value,
+                    loading:false
+                })
+                props.onSignedSuccess('sign Up')
+            }
+            
         }
     }
-    if(value.error===""){
+    if(value.error==="" & value.loading!==true){
         const {name,email,password,confirmPassword,phoneNumber}=value
         return (
             <View style={style.container}>
@@ -152,7 +197,16 @@ const SignUp = props => {
                 </View>
             </View>
         )
-    }else{
+    }
+    else if(value.loading){
+        return(
+            <View style={{top:200,alignItems:'center',justifyContent:'center'}}>
+                    <Text style={{color:'#ffffff'}}>LODING...</Text>
+            </View>
+        )
+
+    }
+    else{
         return(
             <View style={style.container_error}>
                 <View>
@@ -186,6 +240,7 @@ const style=StyleSheet.create({
         backgroundColor:"#ffb3b3",
         borderWidth:1,
         height:200,
+        width:width-(width/4),
         borderRadius:20,
         justifyContent:'center',
         margin:10,
