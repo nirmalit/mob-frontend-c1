@@ -1,9 +1,9 @@
 import { View,StyleSheet, Text,TouchableOpacity, Image } from "react-native"
 import React, { useState,useEffect } from 'react'
-import Base64 from './../page-common/component/Base64';
+import Base64 from '../page-common/component/Base64';
 
-const ProductComponent = (props) => {
-    const [productImage,setProductImge]=useState('')
+const CourseComponent = (props) => {
+    const [courseImage,setCourseImage]=useState('')
 
     useEffect(() => {
         const arrayBufferToBase64=(buffer)=>{
@@ -17,7 +17,7 @@ const ProductComponent = (props) => {
             
             return Base64.btoa(binary)
         }
-        setProductImge(arrayBufferToBase64(props.product.image.data))
+        setCourseImage(arrayBufferToBase64(props.course.image.data))
     }, [])
    
 
@@ -25,15 +25,15 @@ const ProductComponent = (props) => {
         <View style={{position:'relative',paddingVertical:6}}>
             <View style={style.productImgWrapper}>
                 <Image source={{
-                    uri:'data:image/png;base64,'+productImage
+                    uri:'data:image/png;base64,'+courseImage
                 }} style={style.productImg}/>
             </View>
             <View style={style.productInfo}>
                 <View style={style.productDetailWrapper}>
-                    <Text style={style.productDetail}>{props.product.name}</Text>
-                    <Text style={style.productDetail}>₹ {props.product.price}</Text>
+                    <Text style={style.productDetail}>{props.course.name}</Text>
+                    <Text style={style.productDetail}>₹ {props.course.instructor}</Text>
                 </View>
-                <TouchableOpacity onPress={()=>props.props.navigation.navigate('ProductDetails',{productData:props.product})} style={{backgroundColor:"#fff",height:25,display:'flex',justifyContent:"center",alignItems:"center",borderRadius:10}}> 
+                <TouchableOpacity style={{backgroundColor:"#fff",height:25,display:'flex',justifyContent:"center",alignItems:"center",borderRadius:10}}> 
                             <Text style={style.button} > View details </Text>
                 </TouchableOpacity>
             </View>
@@ -57,7 +57,7 @@ const style=StyleSheet.create({
         fontWeight:'bold'
     },
     productDetailWrapper:{
-        padding:10,
+        padding:10
     },
     button:{
         color:'#09B44D'
@@ -70,11 +70,11 @@ const style=StyleSheet.create({
         width:70,
         height:70,
         zIndex:10,
-        marginLeft:20,
+        marginLeft:10,
         position:'absolute',
-        left:6,
+        left:15,
         top:7
 
     }
 })
-export default ProductComponent
+export default CourseComponent

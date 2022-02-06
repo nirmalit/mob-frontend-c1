@@ -1,14 +1,45 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import {Text,View,TextInput,StyleSheet,Image,ScrollView,Dimensions} from 'react-native'
 import NavBar from '../page-common/component/NavBar'
 import ProductComponent from './Product-c'
-import product from '../constant/product-list'
-import Title from './../page-intro/common/Title';
+import { apiGetAllProducts } from './comman/apiHelper';
+import SubLoadingAnimation from './../page-common/component/SubLoading';
+
 const {width,height}=Dimensions.get('screen')
 
 
 
 const Product = (props) => {
+    const [allValues,setAllValues]=useState({
+        error:"",
+        loading:false,
+        allProducts:[]
+    });
+    useEffect(async()=>{
+        setAllValues({
+            ...allValues,
+            loading:true
+        })
+
+        let value=await apiGetAllProducts()
+        console.warn(value.success)
+        if(value.success){
+            setAllValues({
+                ...allValues,
+                loading:false,
+                allProducts:value.data
+            })
+        }else{
+
+            setAllValues({
+                ...allValues,
+                error:"Try Again Later",
+                loading:false
+            })
+
+        }
+        
+    },[])
     return (
         <ScrollView>
             <NavBar Title="PRODUCT" props={{...props}} />
@@ -23,13 +54,15 @@ const Product = (props) => {
                     <Image source={require('../image/common/filter.png')} style={style.filterLogo} />
                 </View>
             </View>
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:90}}>
-                <View style={style.productWrapper}>
-                    {product.map((item,i)=>{
-                        return (<ProductComponent product={item} key={i} />)
-                    })}
-                </View>
-            </ScrollView>
+            {(allValues.loading)?(<SubLoadingAnimation message="All Product Data" />):(
+                <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:90}}>
+                    <View style={style.productWrapper}>
+                        {allValues.allProducts.map((item,i)=>{
+                            return (<ProductComponent product={item} key={item.productid} props={{...props}}/>)
+                        })}
+                    </View>
+                </ScrollView>)}
+           
            
         </ScrollView>
     )

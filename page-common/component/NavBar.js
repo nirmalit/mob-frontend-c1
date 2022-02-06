@@ -36,28 +36,28 @@ const NavBar = (props) => {
             <View style={styles.black_background}></View>
                 <View style={styles.header_list_container}>    
                 <View style={styles.header_list}>
-                        {props.Title!='HOME' && (<TouchableOpacity style={styles.icon_container}  onPress={()=>props.props.navigation.navigate('Loading',{nextPage:"Home"})}>
+                        {props.Title!='HOME' && (<TouchableOpacity style={styles.icon_container}  onPress={()=>props.props.navigation.navigate('Loading',{nextPage:"Home",loadTime:5})}>
                             <Image source={home_icon} style={styles.icon} />
                             <Text style={styles.icon_text}>HOME</Text> 
                         </TouchableOpacity>)}
                         
-                        {props.Title!='PROFILE' && (<TouchableOpacity style={styles.icon_container} onPress={()=>props.props.navigation.navigate('Loading',{nextPage:"Profile"})}>
+                        {props.Title!='PROFILE' && (<TouchableOpacity style={styles.icon_container} onPress={()=>props.props.navigation.navigate('Loading',{nextPage:"Profile",loadTime:1})}>
                             <Image source={profile_icon} style={styles.icon} />
                             <Text style={styles.icon_text}>PROFILE</Text> 
                         </TouchableOpacity>)}
-                        {props.Title!='PRODUCT' && (<TouchableOpacity style={styles.icon_container} onPress={()=>props.props.navigation.navigate('Loading',{nextPage:"Product"})}>
+                        {props.Title!='PRODUCT' && (<TouchableOpacity style={styles.icon_container} onPress={()=>props.props.navigation.navigate('Loading',{nextPage:"Product",loadTime:1})}>
                             <Image source={product_icon} style={styles.icon} />
                             <Text style={styles.icon_text}>PRODUCT</Text> 
                         </TouchableOpacity>)}
-                        {props.Title!='COURSE' && (<TouchableOpacity  style={styles.icon_container}  onPress={()=>props.props.navigation.navigate('Loading',{nextPage:"Course"})}>
+                        {props.Title!='COURSE' && (<TouchableOpacity  style={styles.icon_container}  onPress={()=>props.props.navigation.navigate('Loading',{nextPage:"Course",loadTime:1})}>
                             <Image source={course_icon} style={styles.icon}/>
                             <Text style={styles.icon_text}>COURSES</Text> 
                         </TouchableOpacity>)}
-                        {props.Title!='GALLERY' && (<TouchableOpacity  style={styles.icon_container}  onPress={()=>props.props.navigation.navigate('Loading',{nextPage:'Gallery'})}>
+                        {props.Title!='GALLERY' && (<TouchableOpacity  style={styles.icon_container}  onPress={()=>props.props.navigation.navigate('Loading',{nextPage:'Gallery',loadTime:1})}>
                             <Image source={gallery_icon} style={styles.icon}/>
                             <Text style={styles.icon_text}>GALLERY</Text> 
                         </TouchableOpacity>)}
-                        {props.Title!='ABOUT US' && (<TouchableOpacity  style={styles.icon_container}  onPress={()=>props.props.navigation.navigate('Loading',{nextPage:'AboutUs'})}>
+                        {props.Title!='ABOUT US' && (<TouchableOpacity  style={styles.icon_container}  onPress={()=>props.props.navigation.navigate('Loading',{nextPage:'AboutUs',loadTime:1})}>
                             <Image source={about_us_icon} style={styles.icon}/>
                             <Text style={styles.icon_text}>ABOUT US</Text> 
                         </TouchableOpacity>)}

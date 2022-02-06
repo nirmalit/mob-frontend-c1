@@ -18,6 +18,8 @@ import AboutUs from './page-about/AboutUs';
 import Otp from './page-otp/Otp';
 import Profile from './page-profile/Profile';
 import Loading from './page-loading/Loading';
+import CourseDetails from './page-course/CourseDetails';
+import ProductDetails from './page-product/ProductDetails';
 
 
 const Stack = createNativeStackNavigator();
@@ -118,6 +120,16 @@ const App=()=>{
         />
         <Stack.Screen name="AboutUs" 
           component={AboutUs} 
+          options={{  headerBackVisible:false,
+                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+        />     
+        <Stack.Screen name="CourseDetails" 
+          component={CourseDetails} 
+          options={{  headerBackVisible:false,
+                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+        />     
+        <Stack.Screen name="ProductDetails" 
+          component={ProductDetails} 
           options={{  headerBackVisible:false,
                       headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
         />     
