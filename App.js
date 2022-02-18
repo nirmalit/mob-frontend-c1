@@ -20,6 +20,8 @@ import Profile from './page-profile/Profile';
 import Loading from './page-loading/Loading';
 import CourseDetails from './page-course/CourseDetails';
 import ProductDetails from './page-product/ProductDetails';
+import Myorders from './page-profile/Myorders';
+import Mycourses from './page-profile/Mycourses';
 
 
 const Stack = createNativeStackNavigator();
@@ -130,6 +132,16 @@ const App=()=>{
         />     
         <Stack.Screen name="ProductDetails" 
           component={ProductDetails} 
+          options={{  headerBackVisible:false,
+                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+        />     
+        <Stack.Screen name="MyOrderDetails" 
+          component={Myorders} 
+          options={{  headerBackVisible:false,
+                      headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
+        />     
+        <Stack.Screen name="MyCourseDetails" 
+          component={Mycourses} 
           options={{  headerBackVisible:false,
                       headerTitle: (props) => <HeaderBar {...props} onSignOut={signOutHandler} /> }}
         />     

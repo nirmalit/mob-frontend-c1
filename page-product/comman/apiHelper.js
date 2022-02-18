@@ -25,6 +25,6 @@ export const purchaseProduct=async (bodyValue)=>{
         body:JSON.stringify(bodyValue)
     }
     ).then(response=>{return response.json()}).catch(err=>console.warn(err))
-    //console.warn("result in ApiSign IN",resultFromServer)
+    //console.warn("result in ApiSign IN",JSON.stringify(resultFromServer))
     return resultFromServer
 }

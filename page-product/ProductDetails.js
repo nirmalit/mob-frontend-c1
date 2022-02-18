@@ -47,10 +47,14 @@ const ProductDetails = (props) => {const [allValue, setAllValue] = useState({
       getAddress:false
     });
     let tempValue={}
+    let ar=[]
     tempValue['productid']=props.route.params.productData.productid
     tempValue['count']=allValue.quantity
+    ar.push(tempValue)
+    tempValue={}
+    tempValue['items']=ar
     tempValue['address']=allValue.doorNo+','+allValue.street+','+allValue.area+','+allValue.pincode+','+allValue.landmark
-    //console.warn("value",JSON.stringify(tempValue))
+    console.warn("value-->",JSON.stringify(tempValue))
     
     let purchaseResult = await purchaseProduct(
       tempValue
